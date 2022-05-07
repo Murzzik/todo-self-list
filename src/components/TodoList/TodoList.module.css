@@ -1,0 +1,15 @@
+.todoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+    padding: 20px;
+    border-radius: 50px;
+    background: #3D47AF;
+
+}
+.todoContainer h3 {
+    font-family: "Arial Black", sans-serif;
+    color: #FFF;
+    font-size: 22px;
+}
