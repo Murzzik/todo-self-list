@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import s from './Task.module.css'
 import {v1} from "uuid";
 import {FilteredTasks} from "../../App";
+=======
+import React, {ChangeEvent} from 'react';
+import s from './Task.module.css'
+import {v1} from "uuid";
+import {FilteredTasks} from "../../App";
+import {AddItemForm} from "../AddItemForm/AddItemForm";
+import {EditableSpan} from "../EditableSpan/EditableSpan";
+>>>>>>> 1faf918 (new functions added)
 
 export type TaskType = {
     id: string
@@ -20,6 +29,7 @@ type PropsType = {
 
 export const Task = (props: PropsType) => {
 
+<<<<<<< HEAD
     const [taskTitle, setTaskTitle] = useState('')
     const [error, setError] = useState(false)
 
@@ -44,15 +54,23 @@ export const Task = (props: PropsType) => {
         if (e.key === 'Enter') {
             props.addTask(taskTitle, props.id)
         }
+=======
+    const addTask = (title: string) => {
+        props.addTask(title, props.id)
+>>>>>>> 1faf918 (new functions added)
     }
 
     return (
         <div className={s.taskContainer}>
+<<<<<<< HEAD
             <div>
                 <input value={taskTitle} onChange={onChangeHandler} onKeyPress={onKeyPressHandler} type="text"/>
                 <button onClick={onClickHandler}>+</button>
             </div>
             {error && <div>Title is required</div>}
+=======
+            <AddItemForm addItem={addTask}/>
+>>>>>>> 1faf918 (new functions added)
             <ul>
                 {
                     props.tasks.map(t => {
@@ -60,7 +78,12 @@ export const Task = (props: PropsType) => {
                         const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => props.changeStatus(t.id, e.currentTarget.checked, props.id)
 
                         return <li key={v1()}><input type="checkbox" onChange={onChangeHandler}
+<<<<<<< HEAD
                                                      checked={t.isDone}/><span>{t.title}</span>
+=======
+                                                     checked={t.isDone}/>
+                            <EditableSpan title={t.title} onChange={(value) => {alert(value)}}/>
+>>>>>>> 1faf918 (new functions added)
                             <button onClick={() => props.removeTask(t.id, props.id)}>x</button>
                         </li>
                     })}

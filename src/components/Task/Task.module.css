@@ -2,7 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+<<<<<<< HEAD
     color: #FFF;
+=======
+>>>>>>> 1faf918 (new functions added)
 }
 .taskContainer ul {
     margin-right: auto;
