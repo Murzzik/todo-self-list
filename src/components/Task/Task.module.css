@@ -1,0 +1,17 @@
+.taskContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.taskContainer ul {
+    margin-right: auto;
+    list-style-type: none;
+}
+.listContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.activeFilter {
+    background-color: #97c0f1;
+}
