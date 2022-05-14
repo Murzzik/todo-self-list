@@ -5,11 +5,10 @@ import {v1} from "uuid";
 import {TaskType} from "./components/Task/Task";
 import {AddItemForm} from "./components/AddItemForm/AddItemForm";
 import 'antd/dist/antd.css'
-import {Card, Col, Row} from 'antd';
 
 export type FilteredTasks = 'all' | 'active' | 'completed'
 
-type TodoList = {
+interface TodoList {
     id: string
     title: string
     filter: FilteredTasks
@@ -30,7 +29,7 @@ function App() {
     function removeTask(id: string, todoListId: string) {
         if (todoListId in tasksObj) {
             let tasks = tasksObj[todoListId]
-            tasksObj[todoListId] = tasks.filter(t => t.id != id)
+            tasksObj[todoListId] = tasks.filter(t => t.id !== id)
             setTasksObj({...tasksObj})
         }
     }
@@ -99,10 +98,10 @@ function App() {
                             console.log(tl.title)
                             let taskForTodoLists = tasksObj[tl.id]
                             if (tl.filter === 'active') {
-                                taskForTodoLists = taskForTodoLists.filter(t => t.isDone === false)
+                                taskForTodoLists = taskForTodoLists.filter(t => !t.isDone)
                             }
                             if (tl.filter === 'completed') {
-                                taskForTodoLists = taskForTodoLists.filter(t => t.isDone === true)
+                                taskForTodoLists = taskForTodoLists.filter(t => t.isDone)
                             }
                             return <TodoList key={tl.id} id={tl.id} title={tl.title} tasks={taskForTodoLists}
                                              removeTask={removeTask}
