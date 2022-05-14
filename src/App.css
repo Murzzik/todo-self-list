@@ -1,8 +1,5 @@
 .App {
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-=======
     flex-wrap: wrap;
->>>>>>> 1faf918 (new functions added)
 }
