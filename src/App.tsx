@@ -8,7 +8,7 @@ import 'antd/dist/antd.css'
 
 export type FilteredTasks = 'all' | 'active' | 'completed'
 
-interface TodoList {
+export interface TodoList {
     id: string
     title: string
     filter: FilteredTasks
