@@ -25,3 +25,4 @@ export const EditableSpan = (props: EditableSpan) => {
         ? <input value={title} onChange={onChangeHandler} onBlur={activateViewMode} autoFocus/>
         : <span onDoubleClick={activateEditMode}>{title}</span>;
 };
+// some fix
