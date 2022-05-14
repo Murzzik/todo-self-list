@@ -1,21 +1,4 @@
-.taskContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-<<<<<<< HEAD
-    color: #FFF;
-=======
->>>>>>> 1faf918 (new functions added)
-}
-.taskContainer ul {
-    margin-right: auto;
-    list-style-type: none;
-}
-.listContainer {
-    display: flex;
-    justify-content: space-between;
-}
-
 .activeFilter {
-    background-color: #97c0f1;
+    background: #d2ccea;
+    font-weight: 700;
 }
