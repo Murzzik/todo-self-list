@@ -1,5 +1,5 @@
-import React, {ChangeEvent} from 'react';
-import s from './Task.module.css'
+import React from "react";
+import s from "./Task.module.css"
 import {v1} from "uuid";
 import {FilteredTasks} from "../../App";
 import {AddItemForm} from "../AddItemForm/AddItemForm";
@@ -35,7 +35,6 @@ export const Task = (props: PropsType) => {
             <ul>
                 {
                     props.tasks.map(t => {
-                        console.log(t.title)
                         const onChangeHandler = (e: CheckboxChangeEvent) => props.changeStatus(t.id, e.target.checked, props.id)
                         const onChangeTitleHandler = (newValue: string) => props.changeTaskTitle(t.id, newValue, props.id)
 

@@ -14,6 +14,10 @@ export interface TodoList {
     filter: FilteredTasks
 }
 
+export interface TaskState {
+    [todoListTestId: string]: TaskType[]
+}
+
 const todoListTestId = v1()
 
 const initialTodoListsState: TodoList[] = [
@@ -22,7 +26,7 @@ const initialTodoListsState: TodoList[] = [
 
 function App() {
     const [todoLists, setTodoLists] = useState(initialTodoListsState)
-    const [tasksObj, setTasksObj] = useState<Record<string, TaskType[]>>({
+    const [tasksObj, setTasksObj] = useState<TaskState>({
         [todoListTestId]: [{id: v1(), title: 'What to test', isDone: true}]
     })
 
